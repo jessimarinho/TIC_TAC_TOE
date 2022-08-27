@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Jogo da velha Temático</title>
+
+        <script src="script.js"></script>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="img/tic-tac-toe.png">
+    </head>
+
+    <body>
+        <audio src="audio/cat.wav" id="cat-audio"></audio>
+        <audio src="audio/dog.wav" id="dog-audio"></audio>
+
+        <div id="inicio">
+
+            <h1 id="titulo">Jogo da Velha</h1> 
+            
+            <br/> 
+            
+            <hr size="3" color="#000"/> 
+            
+            <br/>
+
+            <h3>Escolha quem vai começar: </h3>
+
+            <table border="0">
+                <tr>
+                    <td>
+                        <label> 
+                            <input type="radio" id="radio-dog" name="player" value="Dog" required checked/>
+                            <img src="img/dog-face.png" alt="dog"  width="70px" id="icon-dog" onclick="selecionarIcon(this.id); habilitarInicio();">
+                        </label>
+                    </td>
+
+                    <td id="placar-dog">0</td>
+
+                    <td><strong> x </strong></td>
+                    
+                    <td id="placar-cat">0</td>
+
+                    <td>
+                        <label> 
+                            <input type="radio" id="radio-cat" name="player" value="Cat" required/> 
+                            <img src="img/cat-face.png" alt="cat" width="70px" id="icon-cat" onclick="selecionarIcon(this.id); habilitarInicio();">
+                        </label>
+                    </td>
+                </tr>
+            </table>
+
+            <label id="labelCpu"> 
+                <input type="checkbox" id="cpu" name="cpu" value="SIM"/>
+                Jogar contra o PC
+            </label>
+
+            <br/><br/><br/>
+
+            <button onclick="escolhaPlayer();  telaInicial();" id="iniciar" disabled>Iniciar</button>
+            <button onclick="location.reload()" id="limpar">Resetar</button>
+        </div>
+
+
+        <div id="jogo">
+
+            <h1 id="msg"></h1>
+
+            <br/>
+
+            <table id="principal">
+                <tbody>
+                    <tr>
+                        <td id="h1"><img src="img/transp.png" alt="imagem" id="c1" onclick="return checkjogo(this.id)" /></td>
+                        <td id="h2"><img src="img/transp.png" alt="imagem" id="c2" onclick="return checkjogo(this.id)" /></td>
+                        <td id="h3"><img src="img/transp.png" alt="imagem" id="c3" onclick="return checkjogo(this.id)" /></td>
+                    </tr>
+
+                    <tr>
+                        <td id="h4"><img src="img/transp.png" alt="imagem" id="c4" onclick="return checkjogo(this.id)" /></td>
+                        <td id="h5"><img src="img/transp.png" alt="imagem" id="c5" onclick="return checkjogo(this.id)" /></td>
+                        <td id="h6"><img src="img/transp.png" alt="imagem" id="c6" onclick="return checkjogo(this.id)" /></td>
+                    </tr>
+
+                    <tr>
+                        <td id="h7"><img src="img/transp.png" alt="imagem" id="c7" onclick="return checkjogo(this.id)" /></td>
+                        <td id="h8"><img src="img/transp.png" alt="imagem" id="c8" onclick="return checkjogo(this.id)" /></td>
+                        <td id="h9"><img src="img/transp.png" alt="imagem" id="c9" onclick="return checkjogo(this.id)" /></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br/><br/>
+
+            <button onclick="reload(); telaPrincipal();" id="reload">Reiniciar</button>
+
+        </div>
+
+    </body>
+
+</html>
